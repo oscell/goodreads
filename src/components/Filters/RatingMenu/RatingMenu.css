@@ -1,0 +1,8 @@
+.filled-star {
+  fill: rgb(255,165,0); /* Orange color */
+}
+
+.selected-item {
+  background-color: grey; /* Grey color for selected item */
+}
+

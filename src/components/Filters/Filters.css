@@ -1,3 +1,19 @@
 ul{
     list-style-type: none;
 }
+
+
+
+
+
+
+
+.refinementList-container {
+    padding: 0; 
+    margin: 20px 0px 20px 0px;   
+  }
+  
+
+  .facet-hit-count{
+    margin-left: 10px;
+  }

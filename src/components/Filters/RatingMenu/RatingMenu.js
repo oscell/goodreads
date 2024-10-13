@@ -1,23 +1,25 @@
 import { useConnector } from 'react-instantsearch';
 import connectRatingMenu from 'instantsearch.js/es/connectors/rating-menu/connectRatingMenu';
+import "./RatingMenu.css"
 
 export function useRatingMenu(props) {
   return useConnector(connectRatingMenu, props);
 }
 
 export function RatingMenu(props) {
-  const { items, refine, createURL } = useRatingMenu(props);
+  const { items, refine } = useRatingMenu(props);
 
   return (
-    <ul>
+    <ul className='refinementList-container'>
       {items.map((item) => (
-        <li>
-          <a
+        <li
+          key={item.value}
+        >
+          <div
             aria-label={`${item.value} &amp; up`}
-            href={createURL(item.value)}
+            className={item.isRefined ? "selected-item" : ""}
             onClick={(event) => {
               event.preventDefault();
-
               refine(item.value);
             }}
           >
@@ -27,7 +29,7 @@ export function RatingMenu(props) {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 strokeWidth={isFilled ? 0 : 1.5}
-                fill="currentColor"
+                className={isFilled ? "filled-star" : ""}
                 aria-hidden="true"
                 width="24"
                 height="24"
@@ -51,10 +53,10 @@ export function RatingMenu(props) {
             <span>
               {item.value} &amp; Up
             </span>
-            <span>
-              {item.count} matched results
+            <span className='facet-hit-count'>
+              ({item.count})
             </span>
-          </a>
+          </div>
         </li>
       ))}
     </ul>

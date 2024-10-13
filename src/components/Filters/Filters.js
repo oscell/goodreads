@@ -1,22 +1,19 @@
-import {
-  RefinementList,
-
-  ToggleRefinement,
-} from "react-instantsearch";
 import { RatingMenu } from "./RatingMenu/RatingMenu";
 import { RangeSlider } from "./RangeSlider/RangeSlider";
+import {CustomToggleRefinement} from "./CustomToggleRefinement/CustomToggleRefinement"
+import { CustomRefinementList } from "./CustomRefinementList/CustomRefinementList";
 import "./Filters.css"
 
-function SearchBar() {
+function Filters() {
   return (
-    <>
-      <ToggleRefinement attribute="isRead"></ToggleRefinement>
-      <RefinementList attribute="genres"></RefinementList>
-      <RefinementList attribute="author"></RefinementList>
+    <div className='filters_container'>
+      <CustomToggleRefinement attribute="isRead"></CustomToggleRefinement>
+      <CustomRefinementList attribute="genres" title="Genre"></CustomRefinementList>
+      <CustomRefinementList attribute="author" title="Author"></CustomRefinementList>
       <RatingMenu attribute="my_rating_count"></RatingMenu>
       <RangeSlider attribute="avgRating"></RangeSlider>
-    </>
+    </div>
   );
 }
 
-export default SearchBar;
+export default Filters;
