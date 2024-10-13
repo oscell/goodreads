@@ -1,24 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import { liteClient as algoliasearch } from 'algoliasearch/lite';
+
+import { InstantSearch } from 'react-instantsearch';
+import SearchBar from './components/SearchBar/SearchBar.js';
+import Body from './components/Body/Body.js';
+
+const searchClient = algoliasearch('SUHU7TXF9F', '9563ae797facfe7085789e58dd6dddd3');
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+        <InstantSearch searchClient={searchClient} indexName='Books'>
+          <SearchBar />
+          <Body />
+        </InstantSearch>
+
   );
 }
 

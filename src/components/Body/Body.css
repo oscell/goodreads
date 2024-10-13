@@ -1,0 +1,12 @@
+.body_container{
+    display: flex
+}
+
+.filters_container {
+    flex: 1;
+    margin-right: 20px; /* Add some space between filters and results */
+}
+
+.results_container {
+    flex: 3;
+}
