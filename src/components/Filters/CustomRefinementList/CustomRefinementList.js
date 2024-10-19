@@ -2,7 +2,7 @@ import React from 'react';
 import { useRefinementList } from 'react-instantsearch';
 import "./CustomRefinementList.css";
 
-export function CustomRefinementList({ title, ...props }) {
+export function CustomRefinementList({ title, transformItems, showSearch = true, ...props }) {
   const {
     items,
     refine,
@@ -17,22 +17,26 @@ export function CustomRefinementList({ title, ...props }) {
     showMoreLimit: 20 // Number of items to display when "show more" is active
   });
 
+  const transformedItems = transformItems ? transformItems(items) : items; // Apply transformation if provided
+
   return (
     <>
-      {title && <h3>{title}</h3>}  {/* Display the title if provided */}
-      <div className="search-input-container">
-        <input
-          type="search"
-          autoComplete="off"
-          autoCorrect="off"
-          autoCapitalize="off"
-          spellCheck={false}
-          maxLength={512}
-          onChange={(event) => searchForItems(event.currentTarget.value)}
-        />
-      </div>
+      {title && <h3>{title}</h3>}
+      {showSearch && ( // Conditionally render the search input
+        <div className="search-input-container">
+          <input
+            type="search"
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck={false}
+            maxLength={512}
+            onChange={(event) => searchForItems(event.currentTarget.value)}
+          />
+        </div>
+      )}
       <ul className='refinementList-container'>
-        {items.map((item) => (
+        {transformedItems.map((item) => (
           <li key={item.label} className="checkbox-wrapper-65">
             <label>
               <input

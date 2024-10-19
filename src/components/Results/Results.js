@@ -1,20 +1,38 @@
 import { Hits } from "react-instantsearch";
+import './Results.css';
 
 
 function Hit({ hit }) {
     return (
-      <div>
-        <a href={hit.objectID}>{hit.title}</a>  
-        <p>{hit.author}</p>
-        {/* {hit.coverImage && <img src={hit.coverImage} alt={hit.objectID} style={{ width: '100px', height: '100px' }} />} */}
-      </div>
+        <div className="gallery">
+            <div className="card">
+                <img 
+                    src={hit.coverImage} 
+                    alt={hit.objectID} 
+                />
+                <div className="card-content">
+                    <h2>{hit.title}</h2>
+                    <p>{hit.author}</p>
+                    <a href={hit.objectID} className="button">
+                        Find out more 
+                        <span className="arrow-icon">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     );
   }
 
 
 function Results() {
     return (
-        <Hits hitComponent={Hit} />
+        <Hits 
+            hitComponent={Hit}
+            classNames={{
+              item: 'responsive',
+              list: 'custom-Hits-list'
+            }}
+        />
     );
     }
 
