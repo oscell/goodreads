@@ -10,7 +10,7 @@ function Hit({ hit }) {
                     src={hit.coverImage} 
                     alt={hit.objectID} 
                 />
-                <div className="card-content">
+                <div className="card-content"> {/* Set background color to red */}
                     <h2>{hit.title}</h2>
                     <p>{hit.author}</p>
                     <a href={hit.objectID} className="button">

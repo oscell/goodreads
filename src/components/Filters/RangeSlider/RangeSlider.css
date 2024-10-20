@@ -1,0 +1,45 @@
+.A-RCEa_spectrum-Slider-value{
+    display: none;
+
+}
+
+.A-RCEa_spectrum-Slider.A-RCEa_spectrum-Slider--positionTop.A-RCEa_spectrum-Slider--range{
+    width:100%;
+}
+
+.A-RCEa_spectrum-Slider-handle{
+    padding: 5px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin-top: 10px;
+    list-style: none;
+  }
+  
+  .range-labels li {
+    position: relative;
+    text-align: center;
+    flex-grow: 1;
+  }
+  
+  .circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: blue;
+    margin-bottom: 5px;
+    position: relative;
+    transform: translateX(-50%);
+  }
+  
+  .active .circle {
+    background-color: red;
+  }
+  

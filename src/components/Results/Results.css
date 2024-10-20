@@ -32,7 +32,8 @@ div.gallery img {
     transition: opacity .2s ease-out;
 }
 
-h2{
+h2 {
+    color: white; /* Change text color to white */
     position: absolute;
     inset: auto auto 30px 30px;
     margin: 0;
@@ -42,43 +43,53 @@ h2{
     text-transform: uppercase;
 }
 
+.card-content {
+    padding: 100px; /* Optional: Add some padding for better appearance */
+    position: absolute; /* Ensure it is positioned relative to the card */
+    bottom: 0; /* Align it to the bottom */
+    width: 100%; /* Ensure it takes the full width */
+    color: white;
+}
+
 p, a {
+    color: white; /* Change text color to white */
     position: absolute;
     opacity: 0;
     max-width: 80%;
     transition: opacity .3s ease-out;
-  }
+}
 
-  p {
+p {
     inset: auto auto 80px 30px;
-  }
-  
+}
 
-
-  a {
+a {
     inset: auto auto 40px 30px;
     color: inherit;
     text-decoration: none;
-  }
+}
 
-  .gallery:hover h2 {
+.gallery:hover h2 {
     inset: auto auto 220px 30px;
     transition: inset .3s ease-out;
-  }
-  
-  .gallery:hover p, .gallery:hover a {
+}
+
+.gallery:hover p, .gallery:hover a {
     opacity: 1;
     transition: opacity .5s .1s ease-in;
-  }
-  
-  .gallery:hover img {
-    transition: opacity .3s ease-in;
-    opacity: 1;
-  }
+}
 
-  .material-symbols-outlined {
+.gallery:hover img {
+    transition: filter .3s ease-in;
+    opacity: 1;
+    filter: brightness(0.35) sepia(0.5); /* Added colored filter */
+
+
+}
+
+.material-symbols-outlined {
     vertical-align: middle;
-  }
+}
 
 div.desc {
     padding: 15px;
@@ -114,3 +125,5 @@ div.desc {
     display: table;
     clear: both;
 }
+
+

@@ -1,3 +1,5 @@
+
+
 .checkbox-wrapper-65 *,
 .checkbox-wrapper-65 ::after,
 .checkbox-wrapper-65 ::before {
@@ -70,4 +72,9 @@
   width: 100%;
   display: block; /* Ensures the input takes the full width */
   box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+
+.refinementList-container{
+  padding: 10px;
 }

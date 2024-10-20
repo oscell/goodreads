@@ -1,19 +1,43 @@
-ul{
+ul {
     list-style-type: none;
 }
 
+.customeRefinementList {
+  padding: 5px 30px; 
+  margin: 20px 0;   
+  background-color: white;
+}
 
+.facet-hit-count {
+  margin-left: 10px;
+}
 
+.filters_container {
+  margin: 0 0 0 5%;
+}
 
+.show-more-button {
+  margin-bottom: 10px;
+}
 
+.range-labels {
+  margin: 18px 0 0; /* Adjust margin as needed */
+  padding: 0;
+  list-style: none;
+  display: flex; /* Use flexbox for horizontal alignment */
+  justify-content: space-between; /* Space out the labels evenly */
+}
 
+.range-labels li {
+  text-align: center;
+  color: #b2b2b2;
+  font-size: 14px;
+}
 
-.refinementList-container {
-    padding: 0; 
-    margin: 20px 0px 20px 0px;   
-  }
-  
+.range-labels .active {
+  color: #37adbf; /* Highlight active label */
+}
 
-  .facet-hit-count{
-    margin-left: 10px;
-  }
+.range-labels .selected::before {
+  background: #37adbf; /* Highlight selected label */
+}

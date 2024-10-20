@@ -6,10 +6,13 @@ export function useRatingMenu(props) {
   return useConnector(connectRatingMenu, props);
 }
 
-export function RatingMenu(props) {
+export function RatingMenu({title,...props}) {
   const { items, refine } = useRatingMenu(props);
 
   return (
+    <div className="customeRefinementList">
+{title && <h3>{title}</h3>}
+    
     <ul className='refinementList-container'>
       {items.map((item) => (
         <li
@@ -60,5 +63,6 @@ export function RatingMenu(props) {
         </li>
       ))}
     </ul>
+    </div>
   );
 }

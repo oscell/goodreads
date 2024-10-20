@@ -20,7 +20,7 @@ export function CustomRefinementList({ title, transformItems, showSearch = true,
   const transformedItems = transformItems ? transformItems(items) : items; // Apply transformation if provided
 
   return (
-    <>
+    <div className='customeRefinementList'>
       {title && <h3>{title}</h3>}
       {showSearch && ( // Conditionally render the search input
         <div className="search-input-container">
@@ -36,6 +36,7 @@ export function CustomRefinementList({ title, transformItems, showSearch = true,
         </div>
       )}
       <ul className='refinementList-container'>
+
         {transformedItems.map((item) => (
           <li key={item.label} className="checkbox-wrapper-65">
             <label>
@@ -55,10 +56,10 @@ export function CustomRefinementList({ title, transformItems, showSearch = true,
         ))}
       </ul>
       {canToggleShowMore && (
-        <button onClick={toggleShowMore}>
+        <button onClick={toggleShowMore} className='show-more-button'>
           {isShowingMore ? 'Show less' : 'Show more'}
         </button>
       )}
-    </>
+    </div>
   );
 }

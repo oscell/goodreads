@@ -20,8 +20,8 @@ function Filters() {
       <CustomRefinementList attribute="isRead" title="Status" transformItems={transformItems} showSearch={false} ></CustomRefinementList>
       <CustomRefinementList attribute="genres" title="Genre"></CustomRefinementList>
       <CustomRefinementList attribute="author" title="Author"></CustomRefinementList>
-      <RatingMenu attribute="my_rating_count"></RatingMenu>
-      <RangeSlider attribute="avgRating"></RangeSlider>
+      <RatingMenu attribute="my_rating_count" title="Star Rating"></RatingMenu>
+      <RangeSlider attribute="avgRating" title="Status"></RangeSlider>
     </div>
   );
 }
